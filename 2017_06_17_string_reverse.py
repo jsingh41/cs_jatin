@@ -6,9 +6,9 @@ Input: Hello
 Output: olleH
 """
 
-def reverse_me(string):
+def reverse_1(string):
     """
-    Theory
+    Using for loop
     """
     result = ''
     for s in string:
@@ -16,9 +16,27 @@ def reverse_me(string):
     return result
 
 
+def reverse_2(string):
+    # Using Python's function
+    # in string[start:end:increment by]
+    return string[::-1]
+
+
+def reverse_3(string):
+    # Using while loop
+    index = len(string) - 1
+    result = ''
+    while index >= 0:
+        result = result + string[index]
+        index = index - 1
+    return result
+
+
 def main():
     string = raw_input("Provide the string to reverse?: ")
-    print reverse_me(string)
+    print reverse_1(string)
+    print reverse_2(string)
+    print reverse_3(string)
 
 
 if __name__ == '__main__':
