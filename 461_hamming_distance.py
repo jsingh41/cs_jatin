@@ -32,11 +32,11 @@ class Solution(object):
         count = 0
         binary_x = bin(x)[2:]
         binary_y = bin(y)[2:]
-        max_len = max(len(binary_x),len(binary_y))
+        max_len = max(len(binary_x), len(binary_y))
         binary_x = binary_x.zfill(max_len)
         binary_y = binary_y.zfill(max_len)
         for i in range(0,max_len):
-            if binary_x[i] <> binary_y[i]:
+            if binary_x[i] != binary_y[i]:
                 count = count + 1
         return count
         
