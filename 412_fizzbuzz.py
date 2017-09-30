@@ -35,12 +35,13 @@ class Solution(object):
         """
         list_out = []
         for i in range(1,n+1):
-            if i%15==0:
-                list_out.append("FizzBuzz")
-            elif i%5==0:
-                list_out.append("Buzz")
-            elif i%3==0:
-                list_out.append("Fizz")
+            if i % 15 == 0:
+                list_out.append('FizzBuzz')
+            elif i % 5 == 0:
+                list_out.append('Buzz')
+            elif i % 3 == 0:
+                list_out.append('Fizz')
             else:
                 list_out.append(str(i))
-        return(list_out)
+        return list_out
+    
