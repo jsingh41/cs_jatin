@@ -21,14 +21,13 @@ class Solution(object):
         x = 0
         y = 0
         # Solution: x and y hold distance moved from origin. Final x and y should be 0,0
-        for i in range(0,len(moves)):
-            if moves[i] == 'L':
+        for move in moves:
+            if move == 'L':
                 x = x - 1
-            if moves[i] == 'R':
+            if move == 'R':
                 x = x + 1
-            if moves[i] == 'U':
+            if move == 'U':
                 y = y + 1
-            if moves[i] == 'D':
+            if move == 'D':
                 y = y - 1
-            i = i + 1
-        return(x==0 and y==0)
+        return(x == 0 and y == 0)
