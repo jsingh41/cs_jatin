@@ -28,7 +28,5 @@ class Solution(object):
         :type candies: List[int]
         :rtype: int
         """
-        # print len(candies)
-        this_set = set(candies)
-        # print list(this_set)
-        return min(len(this_set),len(candies)/2)
+        unique_candies = set(candies)
+        return min(len(unique_candies),len(candies)/2)
