@@ -22,19 +22,13 @@ class Solution(object):
         :rtype: int
         """
         # Solution: Extract binary of the number using bin() function. For every character in the binary, get complement, append.
-        c = ''
-        bin_c = ''
-        bin_num = bin(num)[2:]
-        print bin_num
-        for i in range(0,len(bin_num)):
-            print bin_num[i]
-            if bin_num[i] == '0':
-                # print bin_num[i]
-                c = '1'
-            elif bin_num[i] == '1':
-                # print bin_num[i]
-                c = '0'
-            bin_c = bin_c+c
-        print "bin output: ",(bin_c)
-        return(int(bin_c,2))
-        
+        binary_complement = ''
+        bit_complement = ''
+        binary_num = bin(num)[2:]
+        for bit_char in binary_num:
+            if bit_char == '0':
+                bit_complement = '1'
+            elif bit_char == '1':
+                bit_complement = '0'
+            binary_complement = binary_complement + bit_complement
+        return int(binary_complement,2)
