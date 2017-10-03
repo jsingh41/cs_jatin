@@ -12,10 +12,25 @@ class Solution(object):
         """
         
         # Solution 2 : Create hash table and pop
+        """
         hash_table = {}
-        for i in nums:
-            try:
-                hash_table.pop(i)
-            except:
-                hash_table[i] = 1
+        for num in nums:
+            if num in hash_table:
+                hash_table.pop(num)
+            else:
+                hash_table[num] = 1
         return hash_table.popitem()[0]
+        """
+        
+        # Solution 3
+        
+        hash_table = {}
+        for num in nums:
+            if num in hash_table:
+                hash_table[num] = hash_table[num] + 1
+            else:
+                hash_table[num] = 1
+        for key in hash_table:
+            if hash_table[key] == 1:
+                return key
+                break
