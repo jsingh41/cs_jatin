@@ -26,19 +26,9 @@ class Solution(object):
         """
         sum_capital = 0
         if word[0].isupper():
-            first_letter_upper = True
+            if all(letter.isupper() for letter in word[1:]) or all(not letter.isupper() for letter in word[1:]):
+                return True
         else:
-            first_letter_upper = False
-        for i,letter in enumerate(word[1:]):
-            if letter.isupper():
-                sum_capital = sum_capital + 1
-        if first_letter_upper:
-            if sum_capital == len(word) - 1 or sum_capital == 0:
+            if all(not letter.isupper() for letter in word):
                 return True
-            else:
-                return False
-        elif not first_letter_upper:
-            if sum_capital == 0:
-                return True
-            else:
-                return False
+        return False
