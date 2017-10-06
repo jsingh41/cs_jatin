@@ -26,9 +26,9 @@ class Solution(object):
         """
         sum_capital = 0
         if word[0].isupper():
-            if all(letter.isupper() for letter in word[1:]) or all(not letter.isupper() for letter in word[1:]):
+            if all(letter.isupper() for letter in word[1:]) or all(letter.islower() for letter in word[1:]):
                 return True
-        else:
-            if all(not letter.isupper() for letter in word):
+        elif word[0].islower():
+            if all(letter.islower() for letter in word):
                 return True
         return False
